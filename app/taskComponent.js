@@ -13,6 +13,9 @@ var task_1 = require('./task');
 var TaskComponent = (function () {
     function TaskComponent() {
     }
+    TaskComponent.prototype.onClick = function (task) {
+        alert('Clicked task:' + task.title);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', task_1.Task)
@@ -20,7 +23,7 @@ var TaskComponent = (function () {
     TaskComponent = __decorate([
         core_1.Component({
             selector: 'task-detail',
-            template: "\n  <div *ngIf=\"myTask\">\n    <h4>{{myTask.title}}</h4>\n    <p>Priority: {{myTask.priority}}</p>\n  </div>\n  "
+            template: "\n  <div *ngIf=\"myTask\">\n    <h4>{{myTask.title}}</h4>\n    <p>Priority: {{myTask.priority}}</p>\n    <button (click)=\"onClick(myTask)\">Click</button>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], TaskComponent);
